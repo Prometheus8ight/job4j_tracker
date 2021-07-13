@@ -22,4 +22,48 @@ public class Tracker {
         }
         return rsl;
     }
+
+    public Item[] findByName(String key) {
+        Item[] newArray = new Item[findEqualNames(key)];
+        int index = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null && items[i].getName().equals(key)) {
+                newArray[index] = items[i];
+                index++;
+            }
+        }
+        return newArray;
+    }
+
+    private int findEqualNames(String key) {
+        int equalNames = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null && items[i].getName().equals(key)) {
+                equalNames++;
+            }
+        }
+        return equalNames;
+    }
+
+    public Item[] findAll() {
+        Item[] newArray = new Item[findNotNullCells()];
+        int index = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null) {
+                newArray[index] = items[i];
+                index++;
+            }
+        }
+        return newArray;
+    }
+
+    private int findNotNullCells() {
+        int notNullCells = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null) {
+                notNullCells++;
+            }
+        }
+        return notNullCells;
+    }
 }
