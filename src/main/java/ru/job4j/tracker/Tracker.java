@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.Arrays;
+
 public class Tracker {
     private final Item[] items = new Item[100];
     private int ids = 1;
@@ -24,46 +26,18 @@ public class Tracker {
     }
 
     public Item[] findByName(String key) {
-        Item[] newArray = new Item[findEqualNames(key)];
+        Item[] newArray = new Item[size];
         int index = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null && items[i].getName().equals(key)) {
+        for (int i = 0; i < size; i++) {
+            if (items[i].getName().equals(key)) {
                 newArray[index] = items[i];
                 index++;
             }
         }
-        return newArray;
-    }
-
-    private int findEqualNames(String key) {
-        int equalNames = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null && items[i].getName().equals(key)) {
-                equalNames++;
-            }
-        }
-        return equalNames;
+        return Arrays.copyOf(newArray, index);
     }
 
     public Item[] findAll() {
-        Item[] newArray = new Item[findNotNullCells()];
-        int index = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null) {
-                newArray[index] = items[i];
-                index++;
-            }
-        }
-        return newArray;
-    }
-
-    private int findNotNullCells() {
-        int notNullCells = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null) {
-                notNullCells++;
-            }
-        }
-        return notNullCells;
+        return Arrays.copyOf(items, size);
     }
 }
