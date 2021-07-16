@@ -10,18 +10,23 @@ public class Matches {
         int count = 11;
         while (count > 0) {
             String player = turn ? "Первый игрок" : "Второй игрок";
-            System.out.println(player + " введите число от 1 до 3:");
-            int matches = Integer.parseInt(input.nextLine());
+            boolean wrigthNum = false;
+            while (!wrigthNum) {
+                System.out.println(player + " введите число от 1 до 3:");
+                int matches = Integer.parseInt(input.nextLine());
+                if (matches <= 3 && matches >= 0) {
+                    count -= matches;
+                    wrigthNum = true;
+                }
+            }
             turn = !turn;
-            count -= matches;
             if (count > 4) {
                 System.out.println("Осталось " + count + " спичек");
             } else if (count > 1) {
                 System.out.println("Осталось " + count + " спички");
             } else {
-                System.out.println("Осталось " + count + " спичка");
+                System.out.println("Осталась " + count + " спичка");
             }
-
         }
         if (!turn) {
             System.out.println("Выиграл первый игрок");
