@@ -20,13 +20,7 @@ public class Matches {
                 }
             }
             turn = !turn;
-            if (count > 4) {
-                System.out.println("Осталось " + count + " спичек");
-            } else if (count > 1) {
-                System.out.println("Осталось " + count + " спички");
-            } else {
-                System.out.println("Осталась " + count + " спичка");
-            }
+            System.out.println("Осталось: " + count);
         }
         if (!turn) {
             System.out.println("Выиграл первый игрок");
