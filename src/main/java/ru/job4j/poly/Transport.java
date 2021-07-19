@@ -6,5 +6,5 @@ public interface Transport {
 
     public void passengers(int numberOfPassengers);
 
-    public int tankUp(int fuel);
+    public double tankUp(int fuel);
 }
