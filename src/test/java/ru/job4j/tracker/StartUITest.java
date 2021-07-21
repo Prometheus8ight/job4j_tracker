@@ -34,9 +34,13 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item1 = new Item("new Item1");
-        tracker.add(item1);
-        tracker.delete(1);
-        Assert.assertNull(tracker.findById(1));
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
+                "replaced item"
+        };
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        Assert.assertNull(tracker.findById(item.getId()));
     }
 }
