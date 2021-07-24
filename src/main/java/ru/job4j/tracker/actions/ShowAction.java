@@ -20,6 +20,7 @@ public class ShowAction implements UserAction {
             }
             return true;
         }
+        System.out.println("Хранилище еще не содержит заявок");
         return false;
     }
 }
