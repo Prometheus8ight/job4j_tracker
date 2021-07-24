@@ -32,9 +32,10 @@ public class StartUITest {
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Replaced item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        String itemID = String.valueOf(item.getId());
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[] {"0", "1", replacedName, "1"}
+                new String[] {"0", itemID, replacedName, "1"}
         );
         UserAction[] actions = {
                 new ReplaceAction(),
@@ -50,8 +51,9 @@ public class StartUITest {
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Deleted item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        String itemID = String.valueOf(item.getId());
         Input in = new StubInput(
-                new String[] {"0", "1", "1"}
+                new String[] {"0", itemID, "1"}
         );
         UserAction[] actions = {
                 new DeleteAction(),
