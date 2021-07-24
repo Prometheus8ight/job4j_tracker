@@ -17,10 +17,10 @@ public class FindByIDAction implements UserAction {
         Item item = tracker.findById(id);
         if (item != null) {
             System.out.println(item);
-            return true;
+        } else {
+            System.out.println("Заявка с введенным id: " + id + " не найдена.");
         }
-        System.out.println("Заявка с введенным id: " + id + " не найдена.");
-        return false;
+        return true;
     }
 }
 

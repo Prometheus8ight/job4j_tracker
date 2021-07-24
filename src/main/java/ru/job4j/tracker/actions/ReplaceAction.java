@@ -18,10 +18,9 @@ public class ReplaceAction implements UserAction {
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
             System.out.println("Заявка изменена успешно.");
-            return true;
         } else {
             System.out.println("Ошибка замены заявки.");
-            return false;
         }
+        return true;
     }
 }
