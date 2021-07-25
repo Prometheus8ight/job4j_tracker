@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import org.junit.Test;
 import ru.job4j.tracker.actions.*;
 import ru.job4j.tracker.outputs.StubOutput;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
@@ -97,6 +98,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Show all Items" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
+                        "=== Show all items ====" + System.lineSeparator() +
                         item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Show all Items" + System.lineSeparator() +
@@ -120,6 +122,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Find Items by Name" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
+                        "=== Find items by name ====" + System.lineSeparator() +
                         item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find Items by Name" + System.lineSeparator() +
@@ -144,6 +147,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Find By ID" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
+                        "=== Find item by id ====" + System.lineSeparator() +
                         item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find By ID" + System.lineSeparator() +
