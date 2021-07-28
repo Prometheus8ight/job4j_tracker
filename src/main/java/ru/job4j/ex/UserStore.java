@@ -31,10 +31,6 @@ public class UserStore {
             e.printStackTrace();
         } catch (UserNotFoundException e) {
             e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } catch (Throwable th) {
-            th.printStackTrace();
         }
     }
 }
